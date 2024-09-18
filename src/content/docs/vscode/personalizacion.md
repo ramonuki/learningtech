@@ -51,7 +51,25 @@ description: Esta es una página en mi sitio impulsado por Starlight
      :::
 ### 2. Añadir fuente a VSCode     
 ### 3. Cambiar parpadeo del cursor
--  Ir a **Settings** (```Ctrl + ,```).
+- Ir a **Settings** (```Ctrl + ,```).
 - En la barra de búsqueda escribir **Cursor Blinking**.
 - Seleccionar la animación deseada (a mi me gusta **expand**)
+
+### 4. Cambiar etiqueta cierre HTML al cambiar la de apertura
+- Ir a **Settings** (```Ctrl + ,```).
+- En la barra de búsqueda escribir **Linked Editing**.
+- Marcar "checkbox".
+
+### 5. Colorear llaves según el bloque
+- Ir a **Settings** (```Ctrl + ,```).
+- En la barra de búsqueda escribir **Bracket Pair Colorization**.
+- Marcar "checkbox".
+
+### 6. Colorear guías que marcan los bloques
+- Ir a **Settings** (```Ctrl + ,```).
+- En la barra de búsqueda escribir **Bracket Pairs**.
+- Marcar "checkbox".
+
+
+
 
