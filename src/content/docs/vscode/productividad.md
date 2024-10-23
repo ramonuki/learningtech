@@ -34,8 +34,34 @@ N
 
 
 
+:::note
+ How do I turn on word wrap?
+You can control word wrap through the `editor.wordWrap` setting. By default, `editor.wordWrap` is off but if you set to it to on, text will wrap on the editor's viewport width.
+```js
+    "editor.wordWrap": "on"
+```
+You can toggle word wrap for the VS Code session with **Alt+Z**.
 
+You can also add vertical column rulers to the editor with the `editor.rulers` setting, which takes an array of column character positions where you'd like vertical rulers.
 
+As in other editors, commands such as **Cut** and **Copy** apply to the whole wrapped line. Triple-click selects the whole wrapped line. Pressing Home twice moves the cursor to the very beginning of the line. Pressing **End** twice moves the cursor to the very end of the line.
+
+How can I avoid placing extra cursors in word wrapped lines?
+If you'd like to ignore line wraps when adding cursors above or below your current selection, you can pass in `{ "logicalLine": true }` to args on the keybinding like this:
+```js
+{
+  "key": "shift+alt+down",
+  "command": "editor.action.insertCursorBelow",
+  "when": "textInputFocus",
+  "args": { "logicalLine": true },
+},
+{
+  "key": "shift+alt+up",
+  "command": "editor.action.insertCursorAbove",
+  "when": "textInputFocus",
+  "args": { "logicalLine": true },
+},
+```
 
 
 
