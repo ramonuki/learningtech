@@ -31,6 +31,14 @@ export default defineConfig({
 					],
 				},
 				{
+					label: 'HtmlCss',
+					items: [
+						// Each item here is one entry in the navigation menu. En "slug" escribir todo en minusculas
+					{ label: 'Introduccion a HTML y CSS', slug: 'htmlcss/introduccion' },
+
+					],
+				},
+				{
 					label: 'Guides',
 					items: [
 						// Each item here is one entry in the navigation menu.
