@@ -2,8 +2,14 @@
 title: Introduccion a git
 description: Esta es una página en mi sitio impulsado por Starlight
 ---
+<details>
+<summary>Web de referencia</summary>
+https://git-scm.com/book/es/v2/Inicio---Sobre-el-Control-de-Versiones-Configurando-Git-por-primera-vez
+</details>
+
 ## Pasos para utilizar Git y Github
 1. Configuración inicial de Git:
+
 - Configurar nombre de usuario y email:
 
 ```
