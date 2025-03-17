@@ -21,5 +21,11 @@ Github cambió el nombre de la rama "master" a rama "main", por eso conviene cam
 ```
 $ git config --global init.defaultBranch main
 ```
+
+- Consultar configuracion de según contextos (sistema, global y local).
+```
+$ git config --list --show-scope
+```
+
 2. Ejecutar `git init` en el directorio de trabajo desado, para inicializar el repositorio local.
 - Se creará una carpeta oculta llamada `.git` en el "working directory".
