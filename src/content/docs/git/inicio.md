@@ -28,4 +28,6 @@ $ git config --list --show-scope
 ```
 
 2. Ejecutar `git init` en el directorio de trabajo desado, para inicializar el repositorio local.
-- Se creará una carpeta oculta llamada `.git` en el "working directory".
+- Se creará una carpeta oculta llamada `.git` en el "working directory" (directorio donde nos encontramos).
+- Si queremos crear una carpeta configurada con el nombre del proyecto ejectutamos `git init nombre_del_proyecto`.
+- Podemos ejecutar `git status` para saber si el proyecto actual tiene un repositorio inicializado correctamente.
