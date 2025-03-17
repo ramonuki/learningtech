@@ -11,3 +11,7 @@ for file in * do
   echo "Antes del 1r commit en $file" >> "$file"
 done
 ```
+Para escribirlo todo en la misma linea:
+```sh
+for file in *; do     echo "Antes del 1r commit en $file" >> "$file"; done
+```
