@@ -4,6 +4,15 @@ description: Esta es una página en mi sitio impulsado por Starlight
 ---
 # Introduccion a linux
 
+:::tip[¿Sabías esto?]
+Para escribir un texto dentro de varios archivos y añadir el nombre del propio archivo en el texto hacemos:
+```sh
+for file in * do
+  echo "Antes del 1r commit en $file" >> "$file"
+done
+```
+:::
+
 El texto puede estar **en negrita**, _en cursiva_, o ~~tachado~~.
 
 Puedes [enlazar a otra página](/constellations/andromeda/).
@@ -15,9 +24,7 @@ Puedes resaltar `código en línea` con comillas invertidas.
 :::note
 Starlight es un conjunto de herramientas para sitios de documentación construido con [Astro](https://astro.build/). Puedes comenzar con este comando:
 
-```sh
-npm run create astro@latest --template starlight
-```
+
 
 :::
 
