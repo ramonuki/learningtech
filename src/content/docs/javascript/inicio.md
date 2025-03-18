@@ -348,7 +348,7 @@ Además de TypeScript y CoffeeScript, existen otros lenguajes derivados para pro
 - **LogicJS**: Permite programar en un estilo similar a Prolog dentro de JavaScript.
 - **Dart**: Ofrece un enfoque más orientado a objetos que JavaScript y es utilizado principalmente en el framework **Flutter**.
 
-## Fundamentos de la Sintaxis en JavaScript
+# Fundamentos de la Sintaxis en JavaScript
 
 Ahora que hemos visto lo básico de cómo usar JavaScript en la consola de Chrome, es recomendable que sigas practicando para familiarizarte con el lenguaje. Antes de profundizar en los **tipos de datos** y en la **sintaxis más avanzada** de JavaScript, hay algunos conceptos generales que debes conocer.
 
