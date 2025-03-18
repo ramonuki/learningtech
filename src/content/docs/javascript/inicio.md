@@ -33,5 +33,71 @@ Estos valores no son variables, sino que son el valor mismo.
    true // Un valor Booleano
    null //Ausencia de un objeto
 ```
-# Curso oReilly de javascript
 :::
+
+# JavaScript
+## Introducción
+"Vanilla JavaScript" es simplemente JavaScript sin ninguna libreria.
+JavaScript ≠ Java
+| JavaScript  | Java |
+| ------------- | ------------- |
+| - Lenguaje interpretado  | - Lenguaje compilado |
+| - Tipado dinámico| - Tipado estático|
+| - Tipado débil| - Tipado fuerte|
+| | | 
+
+**Tipado dinámico**
+Se ejecuta el programa y entonces se comprueban los tipos.
+
+```java
+int x = 5; // Java (tipado estático)
+```
+
+**Tipado estático**
+Se comprueban los tipos y entonces se ejecuta el programa.
+
+```javascript
+let x = 5; // JavaScript (tipado dinámico)
+```
+**Tipado fuerte vs Tipado débil**
+
+El tipado fuerte o débil se refiere a **qué tan estrictamente se aplican los tipos de datos en el lenguaje**.
+
+En lenguajes **fuertemente tipados** como Python o Ruby, no se permite la combinación de tipos distintos sin una conversión explícita:
+
+```python
+"5" + 5  # En Python, esto genera un error
+```
+
+En cambio, JavaScript es **débilmente tipado**, lo que significa que **hace conversiones automáticas entre tipos**:
+
+```javascript
+console.log("5" + 5); // "55" (convierte el número a string automáticamente)
+```
+
+Si bien esto puede ser útil en algunos casos, también puede generar comportamientos inesperados si no se maneja con cuidado.
+
+
+
+### 
+
+:::note
+Universo JavaScript
+- [Node.js](https://nodejs.org/es): Permite ejecutar JS fuera del navegador, i.e. en un servidor (Backend).
+- [npm](https://www.npmjs.com/) (node package manager): Plataforma Open Source para publicar y compartir código/herramientas hechas con JS (Backend).
+- [mongoDB](https://www.mongodb.com/): BBDD no relacional que almacena objetos JS (Backend).
+- [React Native](https://reactnative.dev/) & [NativeScript](https://nativescript.org/): Frameworks de JS para crear apps en iOS y Androi.
+- [Electron](https://www.electronjs.org/): Framework para construir aplicaciones de escritorio con JS (ej. Slack).
+:::
+
+## Tipo de datos
+## Control de flujo
+## Programación Orientada a Objetos
+## Arrays y Objetos
+## Sintaxis JavaScript ES6+
+## Escribir y ejecutar un programa
+## Código Asíncrono
+## Crear un Web Server con JavaScript
+## Dialectos de JavaScript
+## Herramientas GenAI en el desarrollo JavaScript
+
