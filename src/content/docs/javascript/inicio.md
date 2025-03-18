@@ -1,6 +1,6 @@
 ---
-title: Chapter 2. Lexical Structure
-description: Revision de la estructura de JS
+title: Introducción a JavaScript
+description: Introducción a JavaScript.
 ---
 # Introduccion a javascript
 ---
