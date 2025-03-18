@@ -50,7 +50,7 @@ console.log("5" + 5); // "55" (convierte el número a string automáticamente)
 
 Si bien esto puede ser útil en algunos casos, también puede generar comportamientos inesperados si no se maneja con cuidado.
 
-### JavaScript y la Programación Orientada a Objetos
+#### JavaScript y la Programación Orientada a Objetos
 
 JavaScript es un lenguaje **principalmente orientado a objetos**, aunque de una forma más flexible que otros lenguajes como Java o C++.
 
@@ -61,7 +61,7 @@ Esto significa que **JavaScript admite los conceptos básicos de la Programació
 
 Sin embargo, si vienes de un lenguaje donde la POO es central (como Java), es posible que encuentres JavaScript **menos estructurado para ciertos usos orientados a objetos**. Por ejemplo, **no hay una forma nativa de definir atributos privados en una clase**, lo que puede hacer que la encapsulación sea más complicada.
 
-### JavaScript es un lenguaje de un solo hilo
+#### JavaScript es un lenguaje de un solo hilo
 
 Otro punto importante es que **JavaScript es un lenguaje de un solo hilo (single-threaded)**. Esto significa que **solo puede ejecutar una operación a la vez** en un determinado momento.
 
@@ -75,8 +75,6 @@ alert("Hola mundo");
 
 El código **se detendrá hasta que el usuario cierre la alerta**, bloqueando la ejecución del resto del programa. Este tipo de comportamiento puede ser problemático en aplicaciones con muchas interacciones en tiempo real.
 
-### Resumen
-
 Para resumir, JavaScript tiene las siguientes características clave:
 
 1. **Es un lenguaje interpretado**, no compilado.
@@ -87,10 +85,6 @@ Para resumir, JavaScript tiene las siguientes características clave:
 4. **Es de un solo hilo**, lo que significa que solo ejecuta una tarea a la vez, lo que puede afectar su rendimiento en operaciones complejas.
 
 ## Ventajas y desventajas de JavaScript
-
-Ahora que hemos visto para qué se puede usar JavaScript y algunas de sus características, echemos un vistazo más detallado a algunas de sus principales ventajas y desventajas.
-
-No creo que haya un solo desarrollador de JavaScript que afirme que **JavaScript es un lenguaje de programación perfecto**. Pero, por otro lado, cada vez que escucho a alguien decir que JavaScript es un lenguaje de programación terrible (risas), no puedo evitar pensar que probablemente no han trabajado mucho con él y que su opinión proviene de algún video de YouTube que vieron.
 
 ### Ventajas de JavaScript
 
@@ -108,15 +102,9 @@ NPM facilita enormemente la búsqueda e instalación de librerías que otras per
 
 Otra razón por la que JavaScript se ha vuelto tan popular es que **es relativamente fácil de aprender y usar**. Como la mayoría de los lenguajes, tiene detalles complejos y sutilezas, pero lo cierto es que **el tiempo necesario para escribir y ejecutar un programa en JavaScript es generalmente muy corto**.
 
-Más adelante veremos cómo usar JavaScript para crear aplicaciones simples, y verás lo fácil que es empezar a trabajar con él.
-
 #### **4. Versatilidad**
 
 Otra gran ventaja de JavaScript es que **se puede usar para desarrollar aplicaciones en una amplia variedad de plataformas**. No está limitado al **front-end**, **back-end** o **dispositivos móviles**, sino que se puede utilizar en todos estos ámbitos.
-
-Me gusta pensar en JavaScript como el **inglés del mundo de la programación**. Puede ser un idioma extraño a veces y pocos dirían que es el mejor lenguaje en términos de diseño, pero en cuanto a **las oportunidades que te abre**, es difícil de superar.
-
-Si quieres aprender **un solo lenguaje de programación** que te permita desarrollar **aplicaciones web, servidores, aplicaciones móviles, etc.**, **JavaScript es una excelente opción**.
 
 #### **5. Ejecución en el cliente y reducción de carga en el servidor**
 
@@ -166,17 +154,17 @@ Además, el ecosistema de JavaScript está lleno de **jerga técnica** relaciona
 
 
 
-### Las Diferentes Versiones de JavaScript y su Nomenclatura
+## Las Diferentes Versiones de JavaScript y su Nomenclatura
 
 Uno de los temas que más confusión genera entre quienes inician en JavaScript es la gran cantidad de versiones y los diferentes nombres con los que se identifican.
 
-#### ¿Por qué es un tema confuso?
+### ¿Por qué es un tema confuso?
 
 A diferencia de otros lenguajes de programación que utilizan una numeración clara en sus versiones, como **Java 14** o **Python 3.11**, JavaScript emplea nombres como **ES6**, **ES2015**, **ESNext**, entre otros, lo que dificulta la comprensión de su evolución.
 
 Hoy en día, encontramos versiones como **ES15** y **ES2024**, pero, ¿qué significan realmente y por qué no hay simplemente un **JavaScript 5.2**, **JavaScript 6.1** o **JavaScript 7.0**?
 
-#### La Relación Entre Versiones y Entornos de Ejecución
+### La Relación Entre Versiones y Entornos de Ejecución
 
 Una de las razones por las cuales no hay una versión única de JavaScript es que este lenguaje puede ejecutarse en una amplia variedad de entornos, y no todos soportan las mismas características.
 
@@ -188,7 +176,7 @@ Dado que existen tantas implementaciones distintas del lenguaje, surge una pregu
 
 La respuesta es que no existe un único JavaScript. En realidad, cada entorno de ejecución soporta un subconjunto de características del lenguaje, creando su propia versión funcional del mismo.
 
-#### El Papel de ECMAScript
+### El Papel de ECMAScript
 
 Para mantener cierto orden, **ECMAScript** (también llamado **ECMA Script**) define un estándar oficial para JavaScript.
 
@@ -198,7 +186,7 @@ Por ejemplo, si un navegador afirma ser compatible con **ES6**, significa que im
 
 Actualmente, la mayoría de los navegadores modernos soportan **ES5** y **ES6**, pero estamos mucho más allá de esas versiones. En 2024, la versión actual es **ES15**.
 
-#### ¿Por qué los Navegadores no Adoptan Todas las Versiones de ECMAScript de Inmediato?
+### ¿Por qué los Navegadores no Adoptan Todas las Versiones de ECMAScript de Inmediato?
 
 Los navegadores no implementan todas las características de una versión de ECMAScript de golpe. En su lugar, adoptan ciertas funciones nuevas con el tiempo.
 
@@ -208,7 +196,7 @@ Afortunadamente, existen herramientas como **Babel**, que permiten escribir cód
 
 ------
 
-#### Nomenclatura de las Versiones de ECMAScript
+### Nomenclatura de las Versiones de ECMAScript
 
 Cada versión de ECMAScript tiene un nombre que la identifica.
 
@@ -234,11 +222,11 @@ Si la versión actual es **ES15**, entonces **ESNext** hace referencia a **ES16*
 
 ------
 
-### Dialectos de JavaScript
+## Dialectos de JavaScript
 
 Además de las versiones de ECMAScript, existen varios **dialectos de JavaScript**, es decir, lenguajes derivados que introducen nuevas características, pero que eventualmente se convierten en JavaScript estándar antes de ejecutarse.
 
-#### **TypeScript**
+### **TypeScript**
 
 **TypeScript** es el dialecto más popular de JavaScript. Su principal ventaja es que introduce **tipado estático**, lo que permite definir los tipos de variables y parámetros desde el inicio.
 
@@ -246,8 +234,8 @@ JavaScript es un lenguaje **dinámicamente tipado**, lo que significa que los ti
 
 Ejemplo en JavaScript:
 
-```
-javascriptCopiarEditarfunction add(a, b) {
+```javascript
+function add(a, b) {
   return a + b;
 }
 ```
@@ -256,8 +244,8 @@ El código anterior puede aceptar cualquier tipo de dato, lo que puede generar e
 
 Ejemplo en TypeScript:
 
-```
-typescriptCopiarEditarfunction add(a: number, b: number): number {
+```typescript
+function add(a: number, b: number): number {
   return a + b;
 }
 ```
@@ -266,31 +254,27 @@ Aquí, TypeScript asegura que `a` y `b` deben ser números y que la función sie
 
 Dado que los navegadores no pueden ejecutar TypeScript directamente, el código debe **transpilarse** (convertirse) a JavaScript antes de ejecutarse.
 
-#### **CoffeeScript**
+### **CoffeeScript**
 
 Otro dialecto popular es **CoffeeScript**, que simplifica la sintaxis de JavaScript eliminando muchas llaves `{}` y mejorando la legibilidad del código.
 
 Ejemplo en JavaScript:
 
-```
-javascriptCopiarEditarconst square = function(x) {
+```javascript
+const square = function(x) {
   return x * x;
 };
 ```
 
 Ejemplo en CoffeeScript:
 
-```
-coffeescript
-
-
-CopiarEditar
+```coffeescript
 square = (x) -> x * x
 ```
 
 Aunque CoffeeScript ofrece una sintaxis más limpia, su popularidad ha disminuido con los años debido a las mejoras nativas en JavaScript moderno.
 
-#### **Otros Dialectos de JavaScript**
+### **Otros Dialectos de JavaScript**
 
 Además de TypeScript y CoffeeScript, existen otros lenguajes derivados para propósitos específicos:
 
@@ -300,15 +284,14 @@ Además de TypeScript y CoffeeScript, existen otros lenguajes derivados para pro
 
 ## Fundamentos de la Sintaxis en JavaScript
 
-Ahora que hemos visto lo básico de cómo usar JavaScript en la consola de Chrome, es recomendable que sigas practicando para familiarizarte con el lenguaje. Antes de profundizar en los **tipos de datos** y en la **sintaxis más avanzada** de JavaScript, hay algunos conceptos generales que debes conocer.
+Antes de profundizar en los **tipos de datos** y en la **sintaxis más avanzada** de JavaScript, hay algunos conceptos generales que debes conocer.
 
 Estos son:
 
-1. **La sintaxis básica para escribir sentencias en JavaScript**
-2. **Cómo escribir comentarios en JavaScript**
-3. **Cómo imprimir mensajes en la consola**
+**1. La sintaxis básica para escribir sentencias en JavaScript**  
+**2. Cómo escribir comentarios en JavaScript**  
+**3. Cómo imprimir mensajes en la consola**  
 
-Dependiendo del lenguaje de programación del que vengas, estos conceptos pueden ser algo distintos a lo que estás acostumbrado, pero es probable que ya los hayas visto en algún otro lenguaje.
 
 ------
 
@@ -318,11 +301,7 @@ Una **sentencia** en JavaScript es simplemente un fragmento de código que reali
 
 Por ejemplo, asignar un valor a una variable es una sentencia:
 
-```
-javascript
-
-
-CopiarEditar
+```javascript
 let x = 5;
 ```
 
@@ -334,8 +313,8 @@ Algunas personas prefieren siempre colocar punto y coma para mayor claridad y ev
 
 La única excepción donde la mayoría de los desarrolladores no usa punto y coma es en **estructuras de control** como `if` o en la declaración de funciones:
 
-```
-javascriptCopiarEditarif (x > 0) {
+```javascript
+if (x > 0) {
   console.log("Número positivo");
 }
 ```
@@ -346,8 +325,8 @@ Por lo general, las sentencias cortas se escriben en una sola línea. Sin embarg
 
 Ejemplo con una cadena de texto larga:
 
-```
-javascriptCopiarEditarlet mensaje = "Este es un mensaje muy largo que "
+```javascript
+let mensaje = "Este es un mensaje muy largo que "
   + "puede ser dividido en varias líneas "
   + "para mejorar la lectura.";
 ```
@@ -356,8 +335,8 @@ Esto es especialmente útil cuando trabajamos con **objetos** o **funciones con 
 
 Ejemplo con un objeto en JavaScript:
 
-```
-javascriptCopiarEditarlet usuario = {
+```javascript 
+let usuario = {
   nombre: "Carlos",
   edad: 30,
   correo: "carlos@email.com"
@@ -376,8 +355,8 @@ Los **comentarios** son una parte esencial de cualquier lenguaje de programació
 
 Se escriben usando `//`:
 
-```
-javascriptCopiarEditar// Esto es un comentario de una línea
+```javascript
+// Esto es un comentario de una línea
 let edad = 25; // Definiendo la variable edad
 ```
 
@@ -385,8 +364,8 @@ let edad = 25; // Definiendo la variable edad
 
 Para escribir comentarios que abarquen varias líneas, usamos `/* ... */`:
 
-```
-javascriptCopiarEditar/*
+```javascript
+/*
 Este es un comentario 
 de múltiples líneas
 que puede ser útil para explicar bloques de código grandes.
@@ -404,11 +383,7 @@ Una de las maneras más comunes de depurar código en JavaScript es usar `consol
 
 #### **Ejemplo básico**
 
-```
-javascript
-
-
-CopiarEditar
+```javascript 
 console.log("Hola, mundo!");
 ```
 
@@ -423,21 +398,13 @@ JavaScript se puede ejecutar en distintos lugares, como el **navegador**, el **s
 
 Ejemplo en la consola del navegador:
 
-```
-javascript
-
-
-CopiarEditar
+```javascript 
 console.log("Este mensaje aparece en la consola del navegador");
 ```
 
 Ejemplo en **Node.js** (ejecutado desde una terminal):
 
-```
-javascript
-
-
-CopiarEditar
+```javascript 
 console.log("Este mensaje aparece en la terminal");
 ```
 
