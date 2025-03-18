@@ -348,7 +348,150 @@ Además de TypeScript y CoffeeScript, existen otros lenguajes derivados para pro
 - **LogicJS**: Permite programar en un estilo similar a Prolog dentro de JavaScript.
 - **Dart**: Ofrece un enfoque más orientado a objetos que JavaScript y es utilizado principalmente en el framework **Flutter**.
 
+## Fundamentos de la Sintaxis en JavaScript
 
+Ahora que hemos visto lo básico de cómo usar JavaScript en la consola de Chrome, es recomendable que sigas practicando para familiarizarte con el lenguaje. Antes de profundizar en los **tipos de datos** y en la **sintaxis más avanzada** de JavaScript, hay algunos conceptos generales que debes conocer.
+
+Estos son:
+
+1. **La sintaxis básica para escribir sentencias en JavaScript**
+2. **Cómo escribir comentarios en JavaScript**
+3. **Cómo imprimir mensajes en la consola**
+
+Dependiendo del lenguaje de programación del que vengas, estos conceptos pueden ser algo distintos a lo que estás acostumbrado, pero es probable que ya los hayas visto en algún otro lenguaje.
+
+------
+
+## **1. Sentencias en JavaScript**
+
+Una **sentencia** en JavaScript es simplemente un fragmento de código que realiza una acción.
+
+Por ejemplo, asignar un valor a una variable es una sentencia:
+
+```
+javascript
+
+
+CopiarEditar
+let x = 5;
+```
+
+### **Uso de punto y coma**
+
+JavaScript permite escribir sentencias con o sin punto y coma (`;`). Esto ha generado debates dentro de la comunidad de desarrolladores sobre si es mejor usarlo o no.
+
+Algunas personas prefieren siempre colocar punto y coma para mayor claridad y evitar errores inesperados, mientras que otros optan por omitirlo. Lo más importante es ser **consistente** en la forma en que escribes tu código.
+
+La única excepción donde la mayoría de los desarrolladores no usa punto y coma es en **estructuras de control** como `if` o en la declaración de funciones:
+
+```
+javascriptCopiarEditarif (x > 0) {
+  console.log("Número positivo");
+}
+```
+
+### **Dividir una sentencia en varias líneas**
+
+Por lo general, las sentencias cortas se escriben en una sola línea. Sin embargo, cuando una sentencia es muy larga y queremos mejorar la **legibilidad**, podemos dividirla en varias líneas.
+
+Ejemplo con una cadena de texto larga:
+
+```
+javascriptCopiarEditarlet mensaje = "Este es un mensaje muy largo que "
+  + "puede ser dividido en varias líneas "
+  + "para mejorar la lectura.";
+```
+
+Esto es especialmente útil cuando trabajamos con **objetos** o **funciones con muchos argumentos**.
+
+Ejemplo con un objeto en JavaScript:
+
+```
+javascriptCopiarEditarlet usuario = {
+  nombre: "Carlos",
+  edad: 30,
+  correo: "carlos@email.com"
+};
+```
+
+Si escribiéramos el objeto en una sola línea, sería mucho más difícil de leer.
+
+------
+
+## **2. Comentarios en JavaScript**
+
+Los **comentarios** son una parte esencial de cualquier lenguaje de programación, ya que permiten explicar el código sin afectar su ejecución.
+
+### **Comentarios de una sola línea**
+
+Se escriben usando `//`:
+
+```
+javascriptCopiarEditar// Esto es un comentario de una línea
+let edad = 25; // Definiendo la variable edad
+```
+
+### **Comentarios de múltiples líneas**
+
+Para escribir comentarios que abarquen varias líneas, usamos `/* ... */`:
+
+```
+javascriptCopiarEditar/*
+Este es un comentario 
+de múltiples líneas
+que puede ser útil para explicar bloques de código grandes.
+*/
+let precio = 100;
+```
+
+Los comentarios son útiles para explicar código complejo o proporcionar información adicional para otros desarrolladores (o para ti mismo en el futuro).
+
+------
+
+## **3. Imprimir mensajes en la consola**
+
+Una de las maneras más comunes de depurar código en JavaScript es usar `console.log()`.
+
+### **Ejemplo básico**
+
+```
+javascript
+
+
+CopiarEditar
+console.log("Hola, mundo!");
+```
+
+Si ejecutamos este código en la consola del navegador, veremos el mensaje **"Hola, mundo!"** impreso en la consola.
+
+### **Ubicación de la consola en diferentes entornos**
+
+JavaScript se puede ejecutar en distintos lugares, como el **navegador**, el **servidor (Node.js)** o en dispositivos móviles. Dependiendo del entorno, la consola puede estar en ubicaciones diferentes:
+
+- En **navegadores web**, se accede a la consola mediante las **herramientas de desarrollo** (`F12` o `Ctrl + Shift + I`).
+- En **Node.js**, los mensajes se imprimen en la **terminal del sistema operativo**.
+
+Ejemplo en la consola del navegador:
+
+```
+javascript
+
+
+CopiarEditar
+console.log("Este mensaje aparece en la consola del navegador");
+```
+
+Ejemplo en **Node.js** (ejecutado desde una terminal):
+
+```
+javascript
+
+
+CopiarEditar
+console.log("Este mensaje aparece en la terminal");
+```
+
+Conocer `console.log()` es esencial para depurar código y entender mejor cómo funcionan nuestros programas.
 
 
 
