@@ -13,7 +13,7 @@ Universo JavaScript
 - [React Native](https://reactnative.dev/) & [NativeScript](https://nativescript.org/): Frameworks de JS para crear apps en iOS y Androi.
 - [Electron](https://www.electronjs.org/): Framework para construir aplicaciones de escritorio con JS (ej. Slack).
 :::
-JavaScript ≠ Java
+**JavaScript ≠ Java**  
 | JavaScript  | Java |
 | ------------- | ------------- |
 | - Lenguaje interpretado  | - Lenguaje compilado |

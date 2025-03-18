@@ -87,7 +87,17 @@ export default defineConfig({
 					label: 'JavaScript',
 					items: [
 						// Each item here is one entry in the navigation menu.
-						{ label: 'Introduccion a JavaScript', slug: 'javascript/inicio' },
+						{ label: 'Introducción a JavaScript', slug: 'javascript/inicio' },
+						{ label: 'Tipos de datos', slug: 'javascript/tiposdatos' },
+						{ label: 'Control de Flujo', slug: 'javascript/controldeflujo' },
+						{ label: 'Programación Orientada a Objetos', slug: 'javascript/oop' },
+						{ label: 'Arrays y Objetos', slug: 'javascript/arrays' },
+						{ label: 'Sintaxis JS ES6', slug: 'javascript/sintaxisjses6' },
+						{ label: 'Escribir y ejectuar un programa', slug: 'javascript/escribirprograma' },
+						{ label: 'Código Asíncrono', slug: 'javascript/codigoasincrono' },
+						{ label: 'Crear un Web Server', slug: 'javascript/crearwebserver' },
+						{ label: 'Dialectos de JavaScript', slug: 'javascript/dialectosjs' },
+						{ label: 'GenAI en desarrollo JavaScript', slug: 'javascript/jsgenai' },
 					],
 				},
 				{
