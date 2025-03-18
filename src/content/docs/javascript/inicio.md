@@ -38,6 +38,14 @@ Estos valores no son variables, sino que son el valor mismo.
 # JavaScript
 ## Introducción
 "Vanilla JavaScript" es simplemente JavaScript sin ninguna libreria.
+:::note
+Universo JavaScript
+- [Node.js](https://nodejs.org/es): Permite ejecutar JS fuera del navegador, i.e. en un servidor (Backend).
+- [npm](https://www.npmjs.com/) (node package manager): Plataforma Open Source para publicar y compartir código/herramientas hechas con JS (Backend).
+- [mongoDB](https://www.mongodb.com/): BBDD no relacional que almacena objetos JS (Backend).
+- [React Native](https://reactnative.dev/) & [NativeScript](https://nativescript.org/): Frameworks de JS para crear apps en iOS y Androi.
+- [Electron](https://www.electronjs.org/): Framework para construir aplicaciones de escritorio con JS (ej. Slack).
+:::
 JavaScript ≠ Java
 | JavaScript  | Java |
 | ------------- | ------------- |
@@ -77,18 +85,47 @@ console.log("5" + 5); // "55" (convierte el número a string automáticamente)
 
 Si bien esto puede ser útil en algunos casos, también puede generar comportamientos inesperados si no se maneja con cuidado.
 
+## JavaScript y la Programación Orientada a Objetos
+
+JavaScript es un lenguaje **principalmente orientado a objetos**, aunque de una forma más flexible que otros lenguajes como Java o C++.
+
+Esto significa que **JavaScript admite los conceptos básicos de la Programación Orientada a Objetos (POO)**, como:
+
+- **Objetos y clases** para modelar problemas.
+- **Reutilización de código** mediante prototipos y herencia.
+
+Sin embargo, si vienes de un lenguaje donde la POO es central (como Java), es posible que encuentres JavaScript **menos estructurado para ciertos usos orientados a objetos**. Por ejemplo, **no hay una forma nativa de definir atributos privados en una clase**, lo que puede hacer que la encapsulación sea más complicada.
+
+## JavaScript es un lenguaje de un solo hilo
+
+Otro punto importante es que **JavaScript es un lenguaje de un solo hilo (single-threaded)**. Esto significa que **solo puede ejecutar una operación a la vez** en un determinado momento.
+
+En contraste, lenguajes como Java permiten **ejecución concurrente y paralela** mediante hilos (`threads`). Esto hace que JavaScript **no sea ideal para tareas intensivas en procesamiento de datos**.
+
+Por ejemplo, si llamas a la función `alert()` en un navegador:
+
+```javascript
+alert("Hola mundo");
+```
+
+El código **se detendrá hasta que el usuario cierre la alerta**, bloqueando la ejecución del resto del programa. Este tipo de comportamiento puede ser problemático en aplicaciones con muchas interacciones en tiempo real.
+
+## Resumen
+
+Para resumir, JavaScript tiene las siguientes características clave:
+
+1. **Es un lenguaje interpretado**, no compilado.
+2. **Es dinámicamente y débilmente tipado**:
+   - El tipo de las variables se determina en tiempo de ejecución.
+   - No impone restricciones estrictas sobre los tipos de datos.
+3. **Es un lenguaje principalmente orientado a objetos**, aunque con menos restricciones que otros lenguajes como Java.
+4. **Es de un solo hilo**, lo que significa que solo ejecuta una tarea a la vez, lo que puede afectar su rendimiento en operaciones complejas.
+
 
 
 ### 
 
-:::note
-Universo JavaScript
-- [Node.js](https://nodejs.org/es): Permite ejecutar JS fuera del navegador, i.e. en un servidor (Backend).
-- [npm](https://www.npmjs.com/) (node package manager): Plataforma Open Source para publicar y compartir código/herramientas hechas con JS (Backend).
-- [mongoDB](https://www.mongodb.com/): BBDD no relacional que almacena objetos JS (Backend).
-- [React Native](https://reactnative.dev/) & [NativeScript](https://nativescript.org/): Frameworks de JS para crear apps en iOS y Androi.
-- [Electron](https://www.electronjs.org/): Framework para construir aplicaciones de escritorio con JS (ej. Slack).
-:::
+
 
 ## Tipo de datos
 ## Control de flujo
