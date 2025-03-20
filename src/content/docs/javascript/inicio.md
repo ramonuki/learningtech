@@ -305,6 +305,7 @@ Por ejemplo, asignar un valor a una variable es una sentencia:
 let x = 5;
 ```
 
+
 #### **Uso de punto y coma**
 
 JavaScript permite escribir sentencias con o sin punto y coma (`;`). Esto ha generado debates dentro de la comunidad de desarrolladores sobre si es mejor usarlo o no.

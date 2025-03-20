@@ -42,7 +42,6 @@ const usuario = { nombre: "Ana" };
 usuario.nombre = "María"; // Esto es válido, porque estamos cambiando una propiedad del objeto.
 ```
 :::
-------
 
 ### **3. Definir Variables Sin `var`, `let` o `const`** (¡Evítalo!)
 
@@ -93,7 +92,7 @@ JavaScript tiene **8 tipos de datos**:
 7. **BigInt**
 8. **Symbol**
 
-## **El Operador `typeof`**
+### **El Operador `typeof`**
 
 JavaScript proporciona el operador **`typeof`**, que permite verificar el tipo de cualquier variable o valor.
 
