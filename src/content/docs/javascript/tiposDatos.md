@@ -244,7 +244,7 @@ console.log(resultado); // 0.3
 
 ------
 
-## **Resumen**
+## **Resumen numbers**
 
 - JavaScript **no distingue** entre enteros y flotantes; todos son del tipo `Number`.
 - Soporta diferentes bases numéricas como **decimal, hexadecimal, binario y octal**.
@@ -419,12 +419,135 @@ console.log("x + y es " + (x + y)); // Output: "x + y es 13"
 
 ------
 
-## **Conclusión**
+## **Resumen Strings**
 
 - JavaScript permite definir cadenas con **comillas simples, dobles o backticks (`)**.
 - Se pueden **concatenar** con `+` o `.concat()`.
 - Usa `\` para caracteres especiales como `\"`, `\'`, `\n`.
 -**Ten cuidado** al concatenar cadenas con números, ya que el orden afecta el resultado.
+
+
+# **Valores Booleanos en JavaScript**
+
+El tercer tipo de dato en JavaScript es el **Booleano** (`Boolean`). Al igual que en la mayoría de los lenguajes de programación, un **booleano** solo tiene **dos valores posibles**:
+
+- `true` (verdadero)
+- `false` (falso)
+
+Estos valores pueden ser **asignados directamente** o generados como resultado de una **comparación lógica**.
+
+```javascript 
+let esMayor = true; // Asignación directa
+let resultado = 5 > 3; // Comparación (true)
+```
+
+------
+
+## **Uso de Booleanos en la Lógica de Programación**
+
+Los valores booleanos son esenciales para controlar el flujo de ejecución en un programa, especialmente con **estructuras de control** como:
+
+- `if`
+- `while`
+- Operador ternario (`condition ? trueValue : falseValue`)
+
+Ejemplo con `if`:
+
+```javascript
+let edad = 18;
+if (edad >= 18) {
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+```
+
+Ejemplo con `while`:
+
+```javascript 
+let contador = 0;
+while (contador < 3) {
+    console.log("Contador:", contador);
+    contador++;
+}
+```
+
+Ejemplo con operador ternario (`condition ? trueValue : falseValue`):
+
+```javascript 
+let mensaje = edad >= 18 ? "Adulto" : "Menor";
+console.log(mensaje); // "Adulto"
+```
+
+------
+
+## **Valores "Truthy" y "Falsy" en JavaScript**
+
+Aunque solo existen los valores `true` y `false`, **JavaScript permite convertir otros valores a booleanos**.
+
+Existen valores que se consideran **"truthy"** (se interpretan como `true`) y otros que son **"falsy"** (se interpretan como `false`).
+
+| **Valores "Falsy"** (equivalentes a `false`) |
+| -------------------------------------------- |
+| `""` (cadena vacía)                          |
+| `0` (número cero)                            |
+| `NaN` (Not a Number)                         |
+| `0n` (`BigInt` con valor cero)               |
+| `null`                                       |
+| `undefined`                                  |
+| `false`                                      |
+
+Cualquier otro valor en JavaScript es considerado **"truthy"** y se evalúa como `true`.
+
+Ejemplo con `if` y un valor "falsy":
+
+```javascript 
+if ("") {
+    console.log("Esto no se ejecuta"); 
+} else {
+    console.log("Esto sí se ejecuta"); // Se ejecuta porque "" es falsy
+}
+```
+
+Ejemplo con un valor "truthy":
+
+```javascript 
+if ("Hola") {
+    console.log("Esto se ejecuta"); // Se ejecuta porque "Hola" es truthy
+}
+```
+
+------
+
+## **Conversión de Valores a Booleanos**
+
+Para verificar cómo un valor se evalúa en términos booleanos, podemos usar la función `Boolean()` o el operador `!!`.
+
+```javascript 
+console.log(Boolean("Hola"));  // true (truthy)
+console.log(Boolean(""));      // false (falsy)
+console.log(Boolean(123));     // true (truthy)
+console.log(Boolean(0));       // false (falsy)
+console.log(Boolean(null));    // false (falsy)
+console.log(Boolean(undefined)); // false (falsy)
+```
+
+Otra forma rápida de convertir a booleano es con `!!` (doble negación lógica):
+
+```javascript 
+console.log(!!"Hola");   // true
+console.log(!!0);        // false
+```
+
+------
+
+## **Resumen Booleans**
+
+- JavaScript solo tiene **dos valores booleanos:** `true` y `false`.
+- Las **estructuras de control** (`if`, `while`, operadores ternarios) dependen de booleanos.
+- Algunos valores se evalúan como **"truthy"** (equivalentes a `true`) y otros como **"falsy"** (`false`).
+- Puedes convertir cualquier valor a booleano con `Boolean(valor)` o `!!valor`.
+
 
 
 
