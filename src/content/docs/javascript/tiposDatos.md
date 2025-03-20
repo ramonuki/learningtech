@@ -421,11 +421,10 @@ console.log("x + y es " + (x + y)); // Output: "x + y es 13"
 
 ## **Conclusión**
 
-✅ JavaScript permite definir cadenas con **comillas simples, dobles o backticks (````)**.
- ✅ Se pueden **concatenar** con `+` o `.concat()`.
- ✅ Usa `\` para caracteres especiales como `\"`, `\'`, `\n`.
- ✅ **Ten cuidado** al concatenar cadenas con números, ya que el orden afecta el resultado.
+- JavaScript permite definir cadenas con **comillas simples, dobles o backticks (`)**.
+- Se pueden **concatenar** con `+` o `.concat()`.
+- Usa `\` para caracteres especiales como `\"`, `\'`, `\n`.
+-**Ten cuidado** al concatenar cadenas con números, ya que el orden afecta el resultado.
 
-Ahora que conocemos **las cadenas de texto en JavaScript**, en la próxima sección exploraremos los **valores booleanos y su importancia en el control de flujo del programa**. 🚀
 
 
