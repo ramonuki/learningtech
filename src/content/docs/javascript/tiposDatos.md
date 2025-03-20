@@ -246,12 +246,186 @@ console.log(resultado); // 0.3
 
 ## **Resumen**
 
-🔹 JavaScript **no distingue** entre enteros y flotantes; todos son del tipo `Number`.
- 🔹 Soporta diferentes bases numéricas como **decimal, hexadecimal, binario y octal**.
- 🔹 Existen valores especiales: **`NaN`** (resultado inválido) e **`Infinity`** (valor fuera de los límites).
- 🔹 El **objeto `Math`** proporciona funciones matemáticas avanzadas.
- 🔹 Los números grandes pierden precisión y los **decimales pueden dar errores de cálculo**.
+- JavaScript **no distingue** entre enteros y flotantes; todos son del tipo `Number`.
+- Soporta diferentes bases numéricas como **decimal, hexadecimal, binario y octal**.
+- Existen valores especiales: **`NaN`** (resultado inválido) e **`Infinity`** (valor fuera de los límites).
+- El **objeto `Math`** proporciona funciones matemáticas avanzadas.
+- Los números grandes pierden precisión y los **decimales pueden dar errores de cálculo**.
+
+--------
+# **Cadenas de Texto (Strings) en JavaScript**
+
+Ahora que hemos visto lo fundamental sobre los **números en JavaScript**, pasemos al siguiente tipo de dato: **las cadenas de texto (Strings)**.
+
+Las cadenas en JavaScript son **similares a las de otros lenguajes**: simplemente representan una serie de caracteres.
+
+------
+
+## **Cómo Definir Cadenas en JavaScript**
+
+En JavaScript, una cadena se puede definir utilizando **tres tipos de comillas**:
+
+### **1. Comillas Simples y Dobles**
+
+```javascript
+let mensaje1 = 'Hola, mundo';  // Comillas simples
+let mensaje2 = "Hola, mundo";  // Comillas dobles
+```
+
+Ambas opciones son válidas y no hay diferencia funcional. Lo importante es **ser consistente** en todo el código.
+
+### **2. Template Literals (Backticks - ` )**
+
+Desde **ES6**, se pueden usar **backticks (`)** para definir cadenas.
+
+```javascript 
+let nombre = "Ana";
+let saludo = `Hola, ${nombre}!`; // Interpolación de variables
+console.log(saludo); // Output: Hola, Ana!
+```
+
+💡 **Ventaja de los backticks:** Permiten **interpolación de variables** (introducir una variable dentro de un string) y pueden contener **saltos de línea sin necesidad de caracteres especiales**.
+
+------
+
+## **Propiedades y Métodos de Strings**
+
+Las cadenas en JavaScript tienen varias **propiedades y métodos útiles**.
+
+### **1. Propiedad `length` (Longitud de la Cadena)**
+
+```javascript 
+let texto = "JavaScript";
+console.log(texto.length); // Output: 10
+```
+
+### **2. Obtener un Carácter con `charAt()`**
+
+```javascript
 
 
+ 
+console.log(texto.charAt(3)); // Output: a
+```
+
+### **3. Convertir a Mayúsculas y Minúsculas**
+
+```javascript 
+console.log(texto.toUpperCase()); // "JAVASCRIPT"
+console.log(texto.toLowerCase()); // "javascript"
+```
+
+### **4. Otras Funciones Útiles**
+
+```javascript 
+console.log(texto.includes("Script")); // true (verifica si contiene "Script")
+console.log(texto.startsWith("Java")); // true (verifica si empieza con "Java")
+console.log(texto.endsWith("Java"));   // false (verifica si termina con "Java")
+```
+
+------
+
+## **Uso de Caracteres Especiales en Strings**
+
+Algunas veces necesitamos incluir caracteres especiales en una cadena, como comillas o saltos de línea.
+
+### **1. Uso del Carácter de Escape (`\`)**
+
+Si queremos usar comillas dentro de una cadena definida con las mismas comillas, necesitamos un **carácter de escape (`\`)**:
+
+```javascript 
+let frase = "Ella dijo: \"JavaScript es genial!\"";
+console.log(frase);
+```
+
+### **2. Alternativa: Usar Diferentes Tipos de Comillas**
+
+```javascript 
+let frase2 = 'Ella dijo: "JavaScript es genial!"';
+console.log(frase2);
+```
+
+### **3. Caracteres Especiales Comunes**
+
+| Secuencia | Significado           |
+| --------- | --------------------- |
+| `\n`      | Nueva línea           |
+| `\t`      | Tabulación            |
+| `\\`      | Barra invertida (`\`) |
+
+Ejemplo:
+
+```javascript 
+let mensaje = "Línea 1\nLínea 2";
+console.log(mensaje);
+```
+
+Output:
+
+```
+Línea 1
+Línea 2
+```
+
+------
+
+## **Concatenación de Cadenas**
+
+### **1. Usando el Operador `+`**
+
+```javascript 
+let saludo = "Hola" + " " + "mundo!";
+console.log(saludo); // Output: Hola mundo!
+```
+
+### **2. Usando el Método `.concat()`**
+```javascript 
+let parte1 = "Hola";
+let parte2 = "mundo!";
+console.log(parte1.concat(" ", parte2)); // Output: Hola mundo!
+```
+
+------
+
+## **Precauciones al Concatenar Strings con Números**
+
+En JavaScript, puedes concatenar cadenas y números sin necesidad de conversión previa:
+```javascript 
+let edad = 25;
+console.log("Tengo " + edad + " años."); // Output: Tengo 25 años.
+```
+
+Sin embargo, el **orden de las operaciones importa**:
+
+```javascript 
+let x = 5;
+let y = 8;
+console.log("x + y es " + x + y); // Output: "x + y es 58"
+```
+
+💡 **¿Por qué sucede esto?**
+ JavaScript evalúa las expresiones de **izquierda a derecha**.
+
+- Primero concatena `"x + y es "` con `x` → `"x + y es 5"`.
+- Luego concatena con `y` → `"x + y es 58"`.
+
+✅ **Solución:** Usar paréntesis para forzar la operación matemática primero:
+
+```javascript
+
+ 
+console.log("x + y es " + (x + y)); // Output: "x + y es 13"
+```
+
+------
+
+## **Conclusión**
+
+✅ JavaScript permite definir cadenas con **comillas simples, dobles o backticks (````)**.
+ ✅ Se pueden **concatenar** con `+` o `.concat()`.
+ ✅ Usa `\` para caracteres especiales como `\"`, `\'`, `\n`.
+ ✅ **Ten cuidado** al concatenar cadenas con números, ya que el orden afecta el resultado.
+
+Ahora que conocemos **las cadenas de texto en JavaScript**, en la próxima sección exploraremos los **valores booleanos y su importancia en el control de flujo del programa**. 🚀
 
 
