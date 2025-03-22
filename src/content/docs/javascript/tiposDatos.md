@@ -1324,3 +1324,114 @@ Aunque no es común en aplicaciones del día a día, es **muy útil en casos don
 
 
 
+# **Symbol en JavaScript**
+
+El último tipo de dato que veremos en este curso es `Symbol`.
+
+Es probablemente uno de los **menos intuitivos** de todos los tipos primitivos en JavaScript, pero puede ser **muy útil en ciertos casos avanzados**.
+
+------
+
+## ¿Qué es un `Symbol`?
+
+Un `Symbol` es un **valor único e inmutable**. Su propósito principal es **crear identificadores únicos** que **no se pueden duplicar accidentalmente**, incluso si usan la misma descripción.
+
+------
+
+## ¿Cómo se crea un símbolo?
+
+### Usando el constructor `Symbol()`:
+
+```javascript
+   
+const id = Symbol("descripcion opcional");
+```
+
+- La **cadena** que pasamos es una **descripción** (solo para depuración).
+- Podemos omitirla si queremos.
+
+------
+
+## Importante:
+
+- Incluso si dos símbolos tienen la misma descripción, **no son iguales**.
+
+```javascript   
+const a = Symbol("clave");
+const b = Symbol("clave");
+
+console.log(a === b); // ❌ false
+```
+
+La única forma de que dos símbolos sean iguales es que sean **exactamente la misma referencia**.
+
+------
+
+## Símbolos globales: `Symbol.for()`
+
+Existe otra forma de crear símbolos: **registrarlos globalmente** mediante `Symbol.for()`:
+
+```javascript   
+const s1 = Symbol.for("usuarioID");
+const s2 = Symbol.for("usuarioID");
+
+console.log(s1 === s2); // ✅ true
+```
+
+En este caso, se accede a **la misma entrada** dentro de un registro global.
+ Esto permite reutilizar símbolos entre distintas partes de la aplicación.
+
+------
+
+## ¿Para qué sirven los símbolos?
+
+Uno de sus usos más útiles es **evitar conflictos de nombres** cuando agregamos propiedades a objetos.
+
+### ⚠️ Problema clásico:
+
+```javascript   
+const camisa = {
+  talla: "M"
+};
+
+camisa.talla = 11; // ❗ Esto sobrescribe el valor original
+```
+
+### ✅ Solución con `Symbol`:
+
+```javascript   
+const TALLA_OCULTA = Symbol("tallaInterna");
+
+camisa[TALLA_OCULTA] = 11; // No interfiere con 'camisa.talla'
+```
+
+Así evitamos colisiones de propiedades, ya que `Symbol` garantiza que la clave sea **única**.
+
+------
+
+## ¿Cuándo usar `Symbol`?
+
+- Cuando quieres **garantizar unicidad**.
+- Para crear **propiedades ocultas o privadas** en objetos.
+- En librerías o APIs para evitar conflictos de nombres.
+
+------
+
+## Recuerda esto:
+
+- **Los `Symbol` existen para cuando necesitas claves únicas dentro de tu código.**
+
+------
+## Resumen `Symbol`
+
+| Característica       | `Symbol`                        |
+| -------------------- | ------------------------------- |
+| Tipo de dato         | Primitivo                       |
+| Propósito            | Claves únicas                   |
+| Descripción opcional | ✅ Solo para depuración          |
+| Comparación          | `Symbol("a") !== Symbol("a")`   |
+| Reutilización global | ✅ con `Symbol.for()`            |
+| Uso común            | Propiedades ocultas/seguras     |
+| Avanzado             | Sí, poco común en código básico |
+
+------
