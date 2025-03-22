@@ -788,7 +788,194 @@ Aunque `null` no es un objeto, JavaScript lo clasifica como tal por razones téc
 - **Propiedades con caracteres especiales** requieren comillas y deben accederse con `[]`.
 - **`null` se usa para indicar ausencia de datos**, aunque `typeof null` retorna `"object"` por un error histórico en JavaScript.
 
+-------
 
+# **Arrays en JavaScript**
+## **¿Qué es un array?**
+
+En JavaScript, un **array es una colección ordenada de valores**, definida normalmente usando **corchetes**:
+
+```javascript 
+let frutas = ["manzana", "banana", "naranja"];
+```
+
+### Características:
+
+- Puede contener **cualquier tipo de dato**: números, strings, objetos, booleanos, incluso otros arrays.
+- **No es necesario que todos los elementos sean del mismo tipo**, a diferencia de lenguajes con tipado estático.
+
+```javascript 
+let mezcla = [
+    42, 
+    "texto", 
+    true, 
+    { nombre: "Ana" }, 
+    [1, 2]
+    ];
+```
+
+------
+
+## **¿Por qué los arrays no están en la lista de tipos básicos?**
+
+Técnicamente, **los arrays no son un tipo de dato independiente en JavaScript**, sino una **forma especializada del tipo `object`**.
+
+Esto se puede verificar con el operador `typeof`:
+
+```javascript
+let frutas = ["manzana", "banana"];
+console.log(typeof frutas); // "object"
+```
+
+💡 Aunque esto suele ser solo un **detalle técnico**, conviene tenerlo presente para evitar confusiones puntuales.
+
+------
+
+## **Acceder y modificar elementos**
+
+Los elementos de un array se acceden por su **índice**, que empieza en **0**:
+
+```javascript 
+console.log(frutas[0]); // "manzana"
+```
+
+Se pueden modificar fácilmente:
+
+```javascript
+frutas[1] = "pera";
+console.log(frutas); // ["manzana", "pera", "naranja"]
+```
+
+------
+
+## **Propiedad `.length`**
+
+Todos los arrays tienen una propiedad `.length` que indica **cuántos elementos contiene**:
+
+```javascript
+ 
+console.log(frutas.length); // 3
+```
+
+:::note
+El último índice siempre será `.length - 1`.
+:::
+
+------
+
+## **Métodos comunes de los arrays**
+
+JavaScript incluye muchos métodos incorporados para trabajar con arrays. Algunos de los más usados son:
+
+| Método       | Descripción                                                  |
+| ------------ | ------------------------------------------------------------ |
+| `.push()`    | Añade un elemento al final                                   |
+| `.pop()`     | Elimina y retorna el último elemento                         |
+| `.indexOf()` | Retorna el índice de un elemento (o `-1` si no existe)       |
+| `.map()`     | Crea un nuevo array aplicando una función a cada elemento    |
+| `.filter()`  | Crea un nuevo array con los elementos que cumplen una condición |
+| `.sort()`    | Ordena los elementos del array                               |
+
+------
+
+## **¿Usar coma final (`trailing comma`) en arrays y objetos?**
+
+Las comas finales (también llamadas trailing commas) pueden ser útiles al añadir nuevos elementos, parámetros o propiedades en código JavaScript.
+
+```javascript
+let frutas = [
+  "manzana",
+  "pera",
+  "naranja", // ← coma final
+];
+```
+
+Si deseas agregar una nueva propiedad, puedes simplemente añadir una nueva línea sin tener que modificar la última línea anterior, siempre que esa línea ya tenga una coma final. Esto hace que las diferencias en el control de versiones (diffs) sean más limpias y que editar el código sea menos problemático.
+
+JavaScript permite **comas finales en literales de arrays** desde sus inicios.
+ Actualmente, también se permiten en:
+- literales de objetos,
+- parámetros de funciones,
+- importaciones con nombre (`named imports`),
+- exportaciones con nombre (`named exports`), y más.
+⚠️ Sin embargo, JSON no permite comas finales bajo ninguna circunstancia.
+
+:::tip[Did you know?]
+En JavaScript, un literal es una forma directa y explícita de representar un valor en el código fuente, sin necesidad de usar funciones, clases, constructores u otras expresiones.
+
+## Tipos comunes de **literales en JavaScript**
+
+| Tipo de dato        | Ejemplo de literal                                           |
+| ------------------- | ------------------------------------------------------------ |
+| **Número**          | `42`, `3.14`, `-7`                                           |
+| **Cadena (String)** | `"Hola"`, `'Mundo'`, ``Texto``                               |
+| **Booleano**        | `true`, `false`                                              |
+| **Array**           | `[1, 2, 3]`                                                  |
+| **Objeto**          | `{ nombre: "Ana", edad: 30 }`                                |
+| **Null**            | `null`                                                       |
+| **Undefined**       | `undefined` (aunque no se usa como literal comúnmente)       |
+| **BigInt**          | `123456789n`                                                 |
+| **Symbol**          | `Symbol("etiqueta")` (no es un literal puro, pero se crea directamente) |
+
+------
+
+## **Ejemplos prácticos**
+
+### Literal de número:
+
+```javascript 
+let edad = 25; // 25 es un literal numérico
+```
+
+### Literal de cadena:
+
+```javascript 
+let saludo = "Hola"; // "Hola" es un literal de string
+```
+
+### Literal de array:
+
+```javascript 
+let colores = ["rojo", "verde", "azul"];
+```
+
+### Literal de objeto:
+
+```javascript 
+let persona = {
+  nombre: "Juan",
+  edad: 40
+};
+```
+
+------
+
+## ¿Qué no es un literal?
+
+```javascript 
+let numero = new Number(42); // No es un literal: usa un constructor
+let lista = new Array(1, 2, 3); // Tampoco: es una instancia creada con una función
+```
+
+------
+## ¿Por qué son importantes los literales?
+
+- Son la **forma más simple y directa** de crear datos.
+- Se usan **todo el tiempo** en JavaScript.
+- Son **más claros y legibles** que otras formas (como usar constructores).
+
+------
+
+:::
+
+
+## **Resumen arrays**
+
+- Los arrays son **colecciones ordenadas de elementos**.
+- Pueden contener **cualquier tipo de dato** y elementos de tipos mezclados.
+- Aunque **son técnicamente objetos**, su comportamiento es muy específico.
+- Disponen de **métodos potentes** para manipulación avanzada de datos.
+- Usar **comas finales** es opcional, pero recomendable para evitar errores de sintaxis.
 
 
 
