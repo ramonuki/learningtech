@@ -1199,5 +1199,128 @@ saludar(null);      // Hola, null ❌
 - Ambos tienen usos distintos y son fundamentales en JavaScript.
 - Conocer sus diferencias mejora tu comprensión del flujo de datos y validación en tu código.
 
+------
+
+# **BigInt en JavaScript**
+
+Hasta ahora hemos hablado de:
+
+- Números (`Number`)
+- Cadenas (`String`)
+- Booleanos (`Boolean`)
+- Objetos (incluidos Arrays, `null`, funciones y `undefined`)
+
+Ahora es momento de conocer un tipo de dato **menos común pero muy útil**: **`BigInt`**
+
+------
+
+## ¿Qué es `BigInt`?
+
+`BigInt` es un tipo de dato que permite **trabajar con números enteros extremadamente grandes**, **sin perder precisión**.
+
+Fue introducido porque el tipo `Number` en JavaScript tiene **límites de precisión**:
+
+- A partir de 15-16 dígitos, los números pueden dejar de ser precisos.
+
+------
+
+### ¿Cómo se declara un `BigInt`?
+
+Simplemente **añadiendo una `n` al final del número**:
+
+```javascript
+
+const numeroGrande = 9007199254740991n; // Esto es un BigInt
+```
+
+También puedes usar el **constructor**:
+
+```javascript  
+const otroBigInt = BigInt("123456789012345678901234567890");
+```
+
+------
+
+## ¿Qué puedes hacer con `BigInt`?
+
+Puedes realizar **operaciones matemáticas básicas**:
+
+```javascript  
+const a = 1000n;
+const b = 2000n;
+
+console.log(a + b); // 3000n
+console.log(b - a); // 1000n
+console.log(a * b); // 2000000n
+console.log(b / a); // 2n (¡sin decimales!)
+```
+
+------
+
+## Cosas a tener en cuenta
+
+### 1. No puedes mezclar `Number` y `BigInt` directamente
+
+```javascript  
+const a = 10n;
+const b = 2;
+
+console.log(a + b); // ❌ Error: No puedes mezclar bigInt con otros tipos de datos.
+```
+
+Solución:
+
+```javascript
+  
+console.log(a + BigInt(b)); // ✅ 12n
+```
+
+------
+
+### 2. No hay decimales
+
+Cualquier operación que **debería devolver un decimal**, se **redondea hacia abajo**:
+
+```javascript  
+console.log(10n / 3n); // 3n
+console.log(5n / 2n);  // 2n
+```
+
+------
+
+### 3. Puedes usarlo con otros formatos numéricos
+
+```javascript  
+const bigBinary = 0b1010n;     // binario
+const bigHex = 0x1ffn;  // hexadecimal
+const bigOctal = 0o777n;        // octal
+```
+
+------
+
+## ¿Cuándo usar `BigInt`?
+
+Aunque no es común en aplicaciones del día a día, es **muy útil en casos donde la precisión en grandes enteros es esencial**, como:
+
+- Criptografía
+- Cálculos científicos
+- Finanzas de alta precisión
+- Manipulación de IDs grandes (como en bases de datos)
+
+------
+
+## Resumen `BigInt`
+
+| Característica                 | `BigInt`                             |
+| ------------------------------ | ------------------------------------ |
+| Precisión para números grandes | ✅ Sí, sin límites prácticos          |
+| Mezcla con `Number`            | ❌ No, debe hacerse conversión manual |
+| Decimales                      | ❌ No, los trunca                     |
+| Declaración                    | `123n` o `BigInt("123")`             |
+| Uso típico                     | Criptografía, datos financieros      |
+
+
+------
+
 
 
