@@ -549,5 +549,246 @@ console.log(!!0);        // false
 - Puedes convertir cualquier valor a booleano con `Boolean(valor)` o `!!valor`.
 
 
+# Objetos en JavaScrip5
+## **Definición de Objetos**
+
+Un objeto en JavaScript es **una colección de pares clave-valor**. Cada **clave** (o propiedad) está asociada a un **valor** que puede ser de cualquier tipo de dato en JavaScript, incluyendo números, cadenas, booleanos, funciones e incluso otros objetos.
+
+### **Ejemplo de Objeto**
+
+```javascript 
+let persona = {
+    nombre: "Carlos",
+    edad: 30,
+    colorOjos: "marrón"
+};
+```
+
+Los objetos en JavaScript son esenciales para **organizar y estructurar datos**.
+
+Si alguna vez has trabajado con **JSON (JavaScript Object Notation)**, entonces ya has interactuado con objetos de JavaScript.
+
+------
+
+## **Acceder a Propiedades de un Objeto**
+
+Existen **dos formas principales** de acceder a las propiedades de un objeto:
+
+### **1. Notación de punto (`.`)**
+
+```javascript 
+console.log(persona.nombre);  // Output: "Carlos"
+console.log(persona.edad);    // Output: 30
+console.log(persona.colorOjos); // Output: marrón
+```
+
+### **2. Notación de corchetes (`[]`)**
+
+```javascript
+console.log(persona["nombre"]); // Output: "Carlos"
+console.log(persona["edad"]);   // Output: 30
+console.log(persona["colorOjos"]);  // OUtput: marron
+```
+
+:::note
+**¿Cuándo usar corchetes?**
+
+- Cuando el **nombre de la propiedad** está almacenado en una variable:
+
+```javascript 
+let propiedad = "colorOjos";
+console.log(persona[propiedad]); // Output: "marrón"
+```
+
+- Cuando la propiedad contiene **espacios o caracteres especiales**:
+
+```javascript 
+let empleado = { "job-title": "Desarrollador" };
+console.log(empleado["job-title"]); // Output: "Desarrollador"
+```
+
+(No podríamos usar `empleado.job-title` porque el guion `-` no es válido en identificadores).
+
+:::
+
+------
+
+## **Modificar Propiedades de un Objeto**
+
+Podemos cambiar los valores de un objeto después de haberlo definido:
+```javascript 
+persona.edad = 31;
+persona["colorOjos"] = "verde";
+
+console.log(persona.edad); // Output: 31
+console.log(persona.colorOjos); // Output: "verde"
+```
+
+También podemos **agregar nuevas propiedades** dinámicamente:
+
+```javascript 
+persona.altura = 1.75;
+console.log(persona.altura); // Output: 1.75
+```
+
+O eliminar propiedades usando `delete`:
+
+```javascript
+delete persona.colorOjos;
+console.log(persona.colorOjos); // Output: undefined
+```
+
+------
+
+## **Objetos Anidados y Arrays Dentro de Objetos**
+
+Los valores de un objeto pueden ser **otros objetos o arrays**:
+
+```javascript
+let usuario = {
+    nombre: "Ana",
+    direccion: {
+        calle: "Av. Principal",
+        ciudad: "Madrid"
+    },
+    hobbies: ["leer", "correr", "viajar"]
+};
+
+console.log(usuario.direccion.calle); // Output: "Av. Principal"
+console.log(usuario.hobbies[0]);      // Output: "leer"
+```
+
+------
+
+:::caution
+## **Objetos por Referencia**
+
+⚠️ **Los objetos en JavaScript se asignan por referencia, no por valor**.
+
+Esto significa que cuando asignamos un objeto a una variable, esta variable no contiene realmente el objeto, sino **una referencia a la ubicación en memoria** donde el objeto está almacenado.
+
+Ejemplo:
+
+```javascript 
+let persona1 = { nombre: "Carlos" };
+let persona2 = persona1; // Ambas variables apuntan al mismo objeto
+
+persona2.nombre = "Ana"; // Modificamos persona2, pero también afecta a persona1
+
+console.log(persona1.nombre); // Output: "Ana"
+console.log(persona2.nombre); // Output: "Ana"
+```
+En este caso al cambiar una propiedad en `persona2` también se cambiará en `persona1` debido a que los dos apuntan al mismo espacio en memoria en el que está el objeto.
+
+Si queremos **crear una copia independiente del objeto**, debemos usar `Object.assign()` o el **operador spread (`...`)**:
+
+```javascript 
+let persona3 = { ...persona1 }; // Copia independiente
+persona3.nombre = "Pedro";
+
+console.log(persona1.nombre); // Output: "Ana"
+console.log(persona3.nombre); // Output: "Pedro"
+```
+:::
+------
+
+## **Pasar Objetos a Funciones**
+
+Cuando pasamos un objeto a una función, **se pasa por referencia**, por lo que cualquier modificación dentro de la función afectará al objeto original:
+
+```javascript 
+function cambiarEdad(persona) {
+    persona.edad = 40;
+}
+
+let usuario1 = { edad: 25 };
+cambiarEdad(usuario1);
+
+console.log(usuario1.edad); // Output: 40
+```
+
+Si queremos evitar esto, podemos pasar **una copia** del objeto en su lugar:
+
+```javascript 
+function cambiarEdadSeguro(persona) {
+    let copia = { ...persona };
+    copia.edad = 40;
+    return copia;
+}
+
+let usuario2 = { edad: 25 };
+let nuevoUsuario = cambiarEdadSeguro(usuario2);
+
+console.log(usuario2.edad);    // Output: 25
+console.log(nuevoUsuario.edad); // Output: 40
+```
+
+------
+
+## **Sintaxis Reducida para Crear Objetos**
+
+Cuando una propiedad tiene el mismo nombre que una variable, podemos **simplificar la sintaxis**:
+
+```javascript 
+let nombre = "Carlos";
+let edad = 30;
+
+// En lugar de:
+let persona4 = { 
+    nombre: nombre, 
+    edad: edad };
+
+// Podemos escribir directamente:
+let persona5 = { 
+    nombre, 
+    edad };
+```
+
+------
+
+## **Propiedades con Caracteres Especiales**
+
+Si una clave tiene caracteres especiales o espacios, **debe ir entre comillas**:
+
+```javascript 
+let empleado2 = { "job-title": "Diseñador UX" };
+console.log(empleado2["job-title"]); // Output: "Diseñador UX"
+```
+
+En estos casos, debemos usar la notación de corchetes (`[]`) para acceder a la propiedad, ya que `empleado2.job-title` generaría un error.
+
+------
+
+## **El Valor `null` y los Objetos**
+
+JavaScript tiene un valor especial llamado `null`, que se usa para indicar **ausencia de datos**:
+
+```javascript 
+let persona6 = null;
+console.log(persona6); // Output: null
+```
+
+Sin embargo, hay una **peculiaridad en JavaScript**:
+
+```javascript
+ 
+console.log(typeof null); // Output: "object" (esto es un error histórico en JS)
+```
+
+Aunque `null` no es un objeto, JavaScript lo clasifica como tal por razones técnicas.
+
+------
+
+## **Resumen Objetos**
+- **Los objetos** en JavaScript son colecciones de pares clave-valor.
+- Se pueden **acceder, modificar y eliminar propiedades** con `.` o `[]`.
+- **Los objetos se asignan por referencia**, lo que significa que modificar uno puede afectar a otros.
+- Se pueden **anidar objetos** y **almacenar arrays dentro de objetos**.
+- Podemos usar **sintaxis reducida** (`{ nombre, edad }`) cuando las claves y variables tienen el mismo nombre.
+- **Propiedades con caracteres especiales** requieren comillas y deben accederse con `[]`.
+- **`null` se usa para indicar ausencia de datos**, aunque `typeof null` retorna `"object"` por un error histórico en JavaScript.
+
+
+
 
 
