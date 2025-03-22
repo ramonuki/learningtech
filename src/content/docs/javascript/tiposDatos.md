@@ -1110,3 +1110,94 @@ saludar(); // Llama a la función sin argumentos
 - Se llaman usando `nombreFuncion()` con o sin argumentos.
 - Las funciones pueden o no devolver un valor (`return` es opcional).
 
+------
+# **Tipo de dato `undefined` en JavaScript**
+
+El tipo de dato `undefined` es algo **peculiar y único** en JavaScript. Lo encontrarás en varios contextos, pero **casi siempre significa** que:
+
+- Una variable **no existe**, o
+- Ha sido declarada pero **aún no se le ha asignado un valor**.
+
+------
+
+### Ejemplos comunes
+
+```javascript 
+let x;
+console.log(x); // undefined (declarada pero no asignada)
+
+console.log(typeof noExiste); // "undefined" (la variable no existe)
+
+let persona = {};
+console.log(persona.edad); // undefined (la propiedad no existe)
+
+let frutas = ["manzana"];
+console.log(frutas[3]); // undefined (índice fuera de rango)
+
+function saludar() {
+  console.log("Hola");
+}
+console.log(saludar()); // undefined (no tiene return)
+```
+
+------
+
+# **¿Cuál es la diferencia entre `undefined` y `null`?**
+
+Es una pregunta común al aprender JavaScript. Aquí tienes una tabla comparativa clara:
+
+| Característica                          | `undefined`                                     | `null`                                                 |
+| --------------------------------------- | ----------------------------------------------- | ------------------------------------------------------ |
+| ¿Qué significa?                         | Variable no declarada o no inicializada         | Valor intencionalmente vacío o desconocido             |
+| ¿Lo asigna el programador?              | ❌ No siempre (JS lo asigna automáticamente)     | ✅ Sí, se asigna explícitamente                         |
+| Tipo (`typeof`)                         | `"undefined"`                                   | `"object"` (❗ detalle técnico confuso en JS)           |
+| Usos comunes                            | Variable sin valor asignado, acceso inexistente | Ausencia de valor conocida (ej: edad no proporcionada) |
+
+
+------
+
+### Ejemplo para entender `null`
+
+```javascript
+let edadUsuario = null; 
+// Sabemos que la edad existe, pero no ha sido proporcionada aún
+```
+
+------
+
+### Ejemplo de uso de `undefined` automáticamente
+
+```javascript
+let nombre;
+console.log(nombre); // undefined
+```
+
+------
+
+## Consideraciones importantes
+
+- **`undefined`** es el **valor por defecto de una variable declarada** pero no inicializada.
+- **`null`** se usa cuando **queremos decir explícitamente que un valor está ausente**.
+- Aunque ambos representan “falta de valor”, **su uso y comportamiento es distinto**.
+- En funciones con **valores por defecto**, pasar `undefined` **usará el valor por defecto**, mientras que pasar `null` **no lo hará**.
+
+```javascript
+function saludar(nombre = "Invitado") {
+  console.log("Hola, " + nombre);
+}
+
+saludar(undefined); // Hola, Invitado ✅
+saludar(null);      // Hola, null ❌
+```
+
+------
+
+## Resumen `undefined`
+
+- `undefined` = variable vacía **sin valor asignado aún**.
+- `null` = valor **intencionalmente vacío**.
+- Ambos tienen usos distintos y son fundamentales en JavaScript.
+- Conocer sus diferencias mejora tu comprensión del flujo de datos y validación en tu código.
+
+
+
