@@ -894,13 +894,13 @@ Si deseas agregar una nueva propiedad, puedes simplemente añadir una nueva lín
 
 JavaScript permite **comas finales en literales de arrays** desde sus inicios.
  Actualmente, también se permiten en:
-- literales de objetos,
-- parámetros de funciones,
-- importaciones con nombre (`named imports`),
-- exportaciones con nombre (`named exports`), y más.
+- Literales de objetos,
+- Parámetros de funciones,
+- Importaciones con nombre (`named imports`),
+- Exportaciones con nombre (`named exports`), y más.
 ⚠️ Sin embargo, JSON no permite comas finales bajo ninguna circunstancia.
 
-:::tip[Did you know?]
+:::tip[ Sabias ...?]
 En JavaScript, un literal es una forma directa y explícita de representar un valor en el código fuente, sin necesidad de usar funciones, clases, constructores u otras expresiones.
 
 ## Tipos comunes de **literales en JavaScript**
@@ -977,5 +977,136 @@ let lista = new Array(1, 2, 3); // Tampoco: es una instancia creada con una func
 - Disponen de **métodos potentes** para manipulación avanzada de datos.
 - Usar **comas finales** es opcional, pero recomendable para evitar errores de sintaxis.
 
+------
 
+# **Funciones en JavaScript**
+
+## ¿Qué es una función?
+
+Una **función** en JavaScript es un **bloque reutilizable de código** que puede:
+
+- Recibir argumentos (parámetros)
+- Devolver un valor (opcional)
+
+```javascript 
+function saludar(nombre) {
+  return "Hola, " + nombre;
+}
+```
+
+Una función puede no recibir parámetros, o no devolver nada, dependiendo del caso de uso.
+
+------
+
+## ¿Diferencias con otros lenguajes?
+
+A diferencia de lenguajes como **Java**, en JavaScript las funciones **no necesitan pertenecer a una clase u objeto**.
+ Pueden definirse de forma **independiente**:
+
+```javascript 
+function sumar(a, b) {
+  return a + b;
+}
+
+add(2, 3); // Output: 5
+```
+
+------
+
+## Formas de definir funciones
+
+JavaScript permite **múltiples formas** de definir funciones:
+
+### 1. **Declaración de función**
+
+```javascript 
+function sumar(x, y) {
+  return x + y;
+}
+```
+
+Estas funciones son **"hoisting-friendly"**
+
+------
+
+### 2. **Otro modo de declarar una función**
+
+```javascript 
+let suma = function(x, y) {
+  return x + y;
+};
+```
+
+Estas **no se pueden usar antes de ser declaradas**.
+
+------
+
+### 3. **Arrow functions (Funciones flecha)**
+
+Introducidas en **ES6**, son una forma más corta de escribir funciones:
+
+```javascript 
+let suma = (a, b) => a + b;
+```
+
+También pueden tener cuerpo con `{}` y usar `return`:
+```javascript 
+let suma = (a, b) => {
+  return a + b;
+};
+```
+
+------
+:::tip[Sabias ...]
+## ¿Qué es el "hoisting"?
+
+El **hoisting** es una característica de JavaScript donde **las declaraciones de funciones (solo las del tipo `function nombre()`) se "mueven" al inicio del archivo/instrucción**.
+
+Esto permite usar una función antes de definirla:
+
+```javascript 
+saludar(); // Funciona
+
+function saludar() {
+  console.log("Hola");
+}
+```
+
+❌ **Las funciones definidas con `const` o `let` no lo permiten**:
+
+```javascript 
+saludar(); // Error: Cannot access 'saludar' before initialization
+
+const saludar = function() {
+  console.log("Hola");
+};
+```
+:::
+------
+
+## Llamar a una función
+
+Para **ejecutar** una función, simplemente se escribe su nombre seguido de paréntesis:
+
+```javascript
+ 
+sumar(2, 3); // Llama a la función 'sumar' con los argumentos 2 y 3
+```
+
+Si la función no necesita argumentos:
+
+```javascript
+ 
+saludar(); // Llama a la función sin argumentos
+```
+
+------
+
+## Resumen de funciones
+
+- Las funciones son **bloques reutilizables de código**.
+- Pueden definirse con `function`, como expresiones (`let f = function()`) o con **arrow functions** (`=>`).
+- Solo las funciones definidas con `function` son **"hoisted"**.
+- Se llaman usando `nombreFuncion()` con o sin argumentos.
+- Las funciones pueden o no devolver un valor (`return` es opcional).
 
