@@ -37,12 +37,14 @@ null == undefined; // true
 
 0 == null;       // false
 false == "false" // false
+"true" == true // false
+"false" == false // false
 ```
 
 Estas inconsistencias hacen que `==` sea **poco confiable**.
 
 
-#### ✅ Recomendación:
+#### Recomendación:
 
 > **Siempre usa `===`** (igualdad estricta) a menos que tengas un motivo muy claro para no hacerlo.
 
@@ -60,8 +62,22 @@ Number("5") === 5 // true
 - Incluso con `===`, dos objetos o arrays **no se consideran iguales** aunque tengan el mismo contenido:
 
 ```javascript
-{ a: 1 } === { a: 1 }  // false
-[1, 2] === [1, 2]      // false
+//arrays
+let miArray1 = [1, 2, 3];
+let miArray2 = [1, 2, 3];
+miArray1 === miArray2 // false
+
+//objetos
+let miObjeto1 = {mensaje: "Hola"}
+let miObjeto2 = {mensaje: "Hola"}
+miObjeto1 === miObjeto2 // false
+miObjeto1 == miObjeto2 // false
+
+// Si es una referencia al mismo objeto
+let miObjeto1 = {mensaje: "Hola"}
+let miObjeto2 = miObjeto1;
+miObjeto1 === miObjeto2 // true
+
 ```
 
 Esto sucede porque:
@@ -71,12 +87,6 @@ Esto sucede porque:
 
 - Solo serán iguales si apuntan al **mismo objeto en memoria**:
 
-```javascript
-const obj1 = { a: 1 };
-const obj2 = obj1;
-
-obj1 === obj2; // true
-```
 :::
 ------
 
@@ -86,6 +96,9 @@ Esto se llama **comparación profunda** o *deep equality*, y requiere:
 
 - Comprobar cada clave y valor manualmente
 - Usar utilidades como `lodash.isEqual` o escribir una función recursiva.
+:::note
+[Lodash](https://lodash.com/) es una popular librería de utilidades para JavaScript, que ofrece funciones para trabajar con arrays, objetos, cadenas, etc., de forma más eficiente y cómoda.
+:::
 
 ------
 
