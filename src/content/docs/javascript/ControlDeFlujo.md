@@ -54,7 +54,6 @@ Si necesitas comparar un número y una cadena, **convierte explícitamente**:
 Number("5") === 5 // true
 ```
 
-------
 
 ### Comparación de objetos y arrays
 
@@ -88,7 +87,6 @@ Esto sucede porque:
 - Solo serán iguales si apuntan al **mismo objeto en memoria**:
 
 :::
-------
 
 ### ¿Cómo comparar el contenido de objetos o arrays?
 
@@ -100,7 +98,6 @@ Esto se llama **comparación profunda** o *deep equality*, y requiere:
 [Lodash](https://lodash.com/) es una popular librería de utilidades para JavaScript, que ofrece funciones para trabajar con arrays, objetos, cadenas, etc., de forma más eficiente y cómoda.
 :::
 
-------
 
 ### Resumen
 
@@ -113,10 +110,120 @@ Esto se llama **comparación profunda** o *deep equality*, y requiere:
 | `null == undefined`                | ✅ `true`                          |
 | `null === undefined`               | ❌ `false`                         |
 
-------
 
 ### Conclusión
 
 - Usa **`===` siempre** para evitar errores inesperados.
 - No compares objetos o arrays con `===`, a menos que sepas que son la misma referencia.
 - Para comparar contenidos, necesitarás **deep equality**.
+
+
+-----
+
+## Las sentencias if en JavaScript
+
+
+Las sentencias `if` permiten **ejecutar código condicionalmente** en función de si una condición es verdadera o falsa.
+
+### Sintaxis básica
+
+```javascript
+if (condición) {
+  // Código si la condición es verdadera
+} else if (otraCondición) {
+  // Código si la otra condición es verdadera
+} else {
+  // Código si ninguna condición es verdadera
+}
+```
+:::note
+En JavaScript, la condición SIEMPRE debe ir entre paréntesis `()` (a diferencia de Python, por ejemplo).
+:::
+
+### ¿Qué es *truthy* y *falsy*?
+
+JavaScript **convierte automáticamente** cualquier valor en `true` o `false` al evaluarlo en una condición.
+
+- Valores que se comportan como `true` se llaman **truthy**
+- Valores que se comportan como `false` se llaman **falsy**
+
+#### 🔻 Valores *falsy* en JavaScript (solo 7):
+
+1. `false`
+2. `0`
+3. `-0`
+4. `0n` (BigInt cero)
+5. `""` (cadena vacía)
+6. `null`
+7. `undefined`
+8. `NaN`
+
+Todo lo demás es **truthy**, incluso:
+
+- `[]` (array vacío)
+- `{}` (objeto vacío)
+- `Infinity`
+- `'0'` (cadena con un cero)
+
+
+#### Ejemplo práctico:
+
+```javascript
+let mensaje = "";
+
+if (mensaje) {
+  console.log("Mensaje no está vacío");
+} else {
+  console.log("Mensaje está vacío");
+}
+// Output: "Mensaje está vacío" porque "" es falsy
+```
+
+
+### Operadores lógicos en condiciones
+
+Puedes combinar condiciones usando estos operadores booleanos:
+
+| Operador | Signo | Ejemplo                | Significado                              |
+| -------- | ----- | ---------------------- | ---------------------------------------- |
+| **AND**  | `&&`  | `if (x > 0 && x < 10)` | Las dos condiciones deben ser verdaderas |
+| **OR**   | `\|\|`| `if (x > 0 \|\| x > 10)` | Una de las dos condiciones debe ser verdadera|
+| **NOT**  | `!`   | `if (!activo)`         | Niega el valor                           |
+
+
+#### Ejemplo:
+
+```javascript
+const edad = 20;
+const tienePermiso = true;
+
+if (edad >= 18 && tienePermiso) {
+  console.log("Puedes entrar");
+}
+```
+
+
+###  ¡Cuidado con los falsos positivos!
+
+Ejemplos extraños usando `==` (no recomendado):
+
+```javascript
+console.log(0 == "");         // true
+console.log([] == false);     // true
+console.log(null == undefined); // true
+```
+
+✅ Mejor siempre usar `===` y tener presente la lista de valores *falsy*.
+
+
+### Resumen
+
+- Usa `if` para tomar decisiones en tu código.
+- Recuerda que **no solo los booleanos se evalúan** como condiciones.
+- Memoriza los **7 valores falsy**.
+- Usa operadores lógicos (`&&`, `||`, `!`) para construir condiciones más complejas.
+
+
+
+
+
