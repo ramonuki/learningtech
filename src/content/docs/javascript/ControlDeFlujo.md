@@ -57,7 +57,7 @@ Number("5") === 5 // true
 
 ### Comparación de objetos y arrays
 
-:::danger
+:::caution
 - Incluso con `===`, dos objetos o arrays **no se consideran iguales** aunque tengan el mismo contenido:
 
 ```javascript
@@ -222,6 +222,97 @@ console.log(null == undefined); // true
 - Recuerda que **no solo los booleanos se evalúan** como condiciones.
 - Memoriza los **7 valores falsy**.
 - Usa operadores lógicos (`&&`, `||`, `!`) para construir condiciones más complejas.
+
+------
+
+
+## Los bucles `for` en JavaScript
+
+Los bucles permiten ejecutar un bloque de código **varias veces**. En JavaScript, existen **varias formas de usar `for`**, dependiendo del tipo de dato y del objetivo.
+
+### **Bucle `for` clásico** (estilo C/Java)
+
+```javascript
+for (let i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+```
+
+- Tres partes separadas por `;`  :
+
+  - Inicialización (`let i = 0`)
+  - Condición (`i < array.length`)
+  - Incremento (`i++`)
+
+- Es propenso a errores como *off-by-one*.
+
+- Se recomienda **solo cuando necesitas acceso al índice**.
+
+### **Bucle `for...of`**
+
+```javascript
+for (let item of array) {
+  console.log(item);
+}
+```
+
+- Recorre todos los elementos de un array.
+- Es más **legible** y **limpio**.
+- Ideal cuando **no necesitas el índice**, solo los valores.
+- Puedes usar cualquier nombre de variable (`item`, `persona`, `libro`, etc.).
+
+
+### **Bucle `for...in`**
+
+```javascript
+for (let clave in objeto) {
+  console.log(clave, objeto[clave]);
+}
+```
+
+- Recorre todas las **propiedades** de un objeto.
+- Usa `in` en lugar de `of` → ¡no confundir!
+- `clave` será el nombre de cada propiedad (`nombre`, `edad`, etc.).
+
+
+### **Método `forEach()`**
+
+```javascript
+array.forEach(function(elemento) {
+  console.log(elemento);
+});
+```
+
+O con arrow function:
+
+```javascript   
+array.forEach(elemento => console.log(elemento));
+```
+
+- Es un **método** de los arrays.
+- Recibe una **función como argumento** que se ejecuta para cada elemento.
+- No es un `for` clásico, pero **se comporta como un bucle**.
+- Muy usado en programación moderna.
+
+### ¿Cuál usar?
+
+| Caso de uso                             | Opción recomendada     |
+| --------------------------------------- | ---------------------- |
+| Recorrer un array y necesitas el índice | `for` clásico          |
+| Recorrer los valores de un array        | `for...of` o `forEach` |
+| Recorrer las propiedades de un objeto   | `for...in`             |
+| Usar programación funcional             | `forEach`              |
+
+
+
+### Resumen visual
+
+| Tipo          | Uso principal                    | Sobre qué funciona |
+| ------------- | -------------------------------- | ------------------ |
+| `for` clásico | Bucle con índice                 | Arrays             |
+| `for...of`    | Recorrer elementos directamente  | Arrays, cadenas    |
+| `for...in`    | Recorrer claves/propiedades      | Objetos            |
+| `forEach()`   | Función aplicada a cada elemento | Arrays             |
 
 
 
