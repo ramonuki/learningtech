@@ -104,3 +104,9 @@ $ git clean -[opciones]
 `-d` borra también directorios.
 
 `-i` pregunta antes de borrar cada archivo.
+
+
+:::note
+testing
+:::
+
